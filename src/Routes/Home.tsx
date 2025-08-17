@@ -159,11 +159,15 @@ const BigTitle = styled.h3`
     top: -80px;
 `;
 
-const BigOverview = styled.p`
-    padding: 20px;
+const BigContent = styled.p`
+    padding: 5px 20px;
     position: relative;
     top: -80px;
     color: ${(props) => props.theme.white.lighter};
+
+    span {
+        font-size: 24px;
+    }
 `;
 
 const rowVariants: Variants = {
@@ -220,7 +224,7 @@ function Home() {
         { isLoading: loadingTopRated, data: topRatedData },
         { isLoading: loadingUpComming, data: upCommingData },
     ] = useMultipleMovieQuery();
-
+    console.log(latestData);
     // Latest Data
     const [latestDataIndex, setLatestDataIndex] = useState(0);
     const [latestDataLeaving, setLatestDataLeaving] = useState(false);
@@ -463,9 +467,26 @@ function Home() {
                                             <BigTitle>
                                                 {clickedMovie.title}
                                             </BigTitle>
-                                            <BigOverview>
+                                            <BigContent>
+                                                <span>Overview: </span>
                                                 {clickedMovie.overview}
-                                            </BigOverview>
+                                            </BigContent>
+                                            <BigContent>
+                                                <span>Release Date: </span>
+                                                {clickedMovie.release_date}
+                                            </BigContent>
+                                            <BigContent>
+                                                <span>Vote Average: </span>
+                                                {clickedMovie.vote_average}
+                                            </BigContent>
+                                            <BigContent>
+                                                <span>Vote Count: </span>
+                                                {clickedMovie.vote_count}
+                                            </BigContent>
+                                            <BigContent>
+                                                <span>Original Language: </span>
+                                                {clickedMovie.original_language}
+                                            </BigContent>
                                         </>
                                     )}
                                 </BigMovie>

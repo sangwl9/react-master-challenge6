@@ -3,12 +3,22 @@ import { useQuery } from "@tanstack/react-query";
 const API_KEY = "009053f3a8257666a8c22cdce3c3c5ff";
 const BASE_PATH = "https://api.themoviedb.org/3";
 
+interface IGenre {
+    id: number;
+    name: string;
+}
+
 interface IMovie {
     id: number;
     backdrop_path: string;
     poster_path: string;
     title: string;
     overview: string;
+    genres: IGenre[];
+    release_date: string;
+    vote_average: number;
+    vote_count: number;
+    original_language: string;
 }
 
 export interface IGetMoviesResult {
