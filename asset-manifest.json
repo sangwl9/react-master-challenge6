@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-master-challenge6/static/js/main.9d01d4c1.js",
+    "main.js": "/react-master-challenge6/static/js/main.585e08bd.js",
     "index.html": "/react-master-challenge6/index.html",
-    "main.9d01d4c1.js.map": "/react-master-challenge6/static/js/main.9d01d4c1.js.map"
+    "main.585e08bd.js.map": "/react-master-challenge6/static/js/main.585e08bd.js.map"
   },
   "entrypoints": [
-    "static/js/main.9d01d4c1.js"
+    "static/js/main.585e08bd.js"
   ]
 }
