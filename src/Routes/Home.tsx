@@ -1,5 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
-import { getLatestMovies, IGetMoviesResult, useMultipleQuery } from "../api";
+import { useMultipleMovieQuery } from "../api";
 import styled from "styled-components";
 import { makeImagePath } from "../utils";
 import { motion, AnimatePresence, Variants, useScroll } from "motion/react";
@@ -220,7 +219,7 @@ function Home() {
         { isLoading: loadingLatest, data: latestData },
         { isLoading: loadingTopRated, data: topRatedData },
         { isLoading: loadingUpComming, data: upCommingData },
-    ] = useMultipleQuery();
+    ] = useMultipleMovieQuery();
 
     // Latest Data
     const [latestDataIndex, setLatestDataIndex] = useState(0);
@@ -282,7 +281,7 @@ function Home() {
     const onOverlayClick = () => history.push("/");
     return (
         <Wrapper>
-            {loadingLatest && loadingTopRated ? (
+            {loadingLatest && loadingTopRated && loadingUpComming ? (
                 <Loader>Loading...</Loader>
             ) : (
                 <>
